@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Photo Gallery</title>
+<style>
+  /* Gallery grid */
+  body {
+    margin: 0; 
+    font-family: Arial, sans-serif; 
+    background: #111;
+    color: #eee;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 10px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  .gallery img {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.8);
+    transition: transform 0.3s ease;
+  }
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Modal styles */
+  .modal {
+    position: fixed;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 9999;
+  }
+  .modal.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .modal-content {
+    max-width: 90vw;
+    max-height: 90vh;
+    position: relative;
+  }
+  .modal-content img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+  }
+
+  /* Close button */
+  .close-btn {
+    position: absolute;
+    top: 10px; right: 10px;
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  .close-btn:hover {
+    background: rgba(255,255,255,0.5);
+  }
+</style>
+</head>
+<body>
+
+<div class="gallery">
+  <img src="images/photo1.jpg" alt="Photo 1" />
+  <img src="images/photo2.jpg" alt="Photo 2" />
+  <img src="images/photo3.jpg" alt="Photo 3" />
+  <img src="images/photo4.jpg" alt="Photo 4" />
+  <img src="images/photo5.jpg" alt="Photo 5" />
+  <img src="images/photo6.jpg" alt="Photo 6" />
+  <!-- add more photos as needed -->
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <button class="close-btn" id="closeBtn">&times;</button>
+    <img src="" alt="Enlarged photo" id="modalImg" />
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modalImg');
+  const closeBtn = document.getElementById('closeBtn');
+  const galleryImages = document.querySelectorAll('.gallery img');
+
+  galleryImages.forEach(img => {
+    img.addEventListener('click', () => {
+      modal.classList.add('open');
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+      document.body.style.overflow = 'hidden'; // prevent background scroll
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+
+  // Close modal on clicking outside the image
+  modal.addEventListener('click', e => {
+    if (e.target === modal) {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Optional: Close modal with Escape key
+  window.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+</script>
+
+</body>
+</html>
