@@ -1,34 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photographer Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HT Creates – Photographer Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
-        <h1>HT Creates</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Main</a></li>
-                <li><a href="about_ht.html">Intro</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="project_1.html">Project 1</a></li>
-                <li><a href="project2.html">Project 2</a></li>
-                <li><a href="project3.html">Project 3</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="main-hero">
-            <h2>A repository of subtle sublimity. </h2>
-            <p>Visual and verbal poetry. </p>
-            <img src="images/main-hero.jpg" alt="Main Portfolio Image" style="width:100%;max-width:800px;">
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Photographer Name. All rights reserved.</p>
-    </footer>
+
+  <header>
+    <h1>HT Creates</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Main</a></li>
+        <li><a href="about_ht.html">Intro</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="project_1.html">Project 1</a></li>
+        <li><a href="project2.html">Project 2</a></li>
+        <li><a href="project3.html">Project 3</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 🚀 Carousel Section -->
+  <section class="carousel" id="carousel">
+    <img src="images/slide1.jpg" alt="Slide 1" />
+    <img src="images/slide2.jpg" alt="Slide 2" />
+    <img src="images/slide3.jpg" alt="Slide 3" />
+    <button id="prev">◀</button>
+    <button id="next">▶</button>
+  </section>
+
+  <!-- 🔥 Your Original Hero Section -->
+  <main>
+    <section class="main-hero">
+      <h2>A repository of subtle sublimity.</h2>
+      <p>Visual and verbal poetry.</p>
+      <img src="images/main-hero.jpg" alt="Main Portfolio Image" style="width:100%;max-width:800px;">
+    </section>
+  </main>
+
+  <!-- 💬 New Intro Section -->
+  <section class="intro">
+    <h2>Landscape, Light, and Language</h2>
+    <p>Blending visual narrative with poetic resonance – this is HT’s photographic vision.</p>
+  </section>
+
+  <!-- 📅 Optional Upcoming Events -->
+  <section class="upcoming">
+    <h2>Upcoming Projects</h2>
+    <ul>
+      <li><strong>Desert Light Series</strong> — July 2025</li>
+      <li><strong>Monsoon Monologues</strong> — September 2025</li>
+      <li><strong>Winter Quietude</strong> — December 2025</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 HT Creates. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
