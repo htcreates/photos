@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1 - Photographer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Photographer Name</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Main</a></li>
+                <li><a href="intro.html">Intro</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="project1.html">Project 1</a></li>
+                <li><a href="project2.html">Project 2</a></li>
+                <li><a href="project3.html">Project 3</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="project">
+            <h2>Project 1: [Project Title]</h2>
+            <p>[Brief description of the project: what was the theme, the approach, and any story behind it.]</p>
+            <div class="project-gallery">
+                <img src="images/project1-1.jpg" alt="Project 1 Image 1">
+                <img src="images/project1-2.jpg" alt="Project 1 Image 2">
+                <img src="images/project1-3.jpg" alt="Project 1 Image 3">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Photographer Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
